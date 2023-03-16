@@ -1,0 +1,13 @@
+Advance to Go (Collect £200),0,0
+Advance to Trafalgar Square. If you pass Go, collect £200,0,24
+Advance to Mayfair,0,39
+Advance to Pall Mall. If you pass Go, collect £200,0,11
+Advance to the nearest Station. If unowned you may buy it from the Bank. If owned pay rent,3,Station
+Advance token to nearest Utility. If unowned you may buy it from the Bank. If owned rent,3,Utility
+Bank pays you dividend of £50,1,50
+Get Out of Jail Free,5
+Go Back 3 Spaces,4,3
+Go to Jail. Go directly to Jail, do not pass Go, do not collect £200,6
+Speeding fine £15,2,15
+Take a trip to Kings Cross Station. If you pass Go, collect £200,3,5
+Your building loan matures. Collect £150,1,150

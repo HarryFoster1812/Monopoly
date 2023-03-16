@@ -1,0 +1,48 @@
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\bin\Debug\Monopoly.exe.config
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\bin\Debug\Monopoly.exe
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\bin\Debug\Monopoly.pdb
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.AssemblyReference.cache
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.SuggestedBindingRedirects.cache
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\MainWindow.g.cs
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\App.g.cs
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\Monopoly_MarkupCompile.cache
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\Monopoly_MarkupCompile.lref
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\MainWindow.baml
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\Monopoly.g.resources
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\Monopoly.Properties.Resources.resources
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.GenerateResource.cache
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.CoreCompileInputs.cache
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\Monopoly.exe
+C:\Users\17hfoster\OneDrive - Bury Grammar Schools\A level\Computer science\Monopoly\Monopoly\obj\Debug\Monopoly.pdb
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\bin\Debug\Monopoly.exe.config
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\bin\Debug\Monopoly.exe
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\bin\Debug\Monopoly.pdb
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.AssemblyReference.cache
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.SuggestedBindingRedirects.cache
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\MainWindow.g.cs
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\App.g.cs
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly_MarkupCompile.cache
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly_MarkupCompile.lref
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\MainWindow.baml
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.g.resources
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.Properties.Resources.resources
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.GenerateResource.cache
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.CoreCompileInputs.cache
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.exe
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\Monopoly\obj\Debug\Monopoly.pdb
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\bin\Debug\Monopoly.exe.config
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\bin\Debug\Monopoly.exe
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\bin\Debug\Monopoly.pdb
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.AssemblyReference.cache
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.SuggestedBindingRedirects.cache
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\MainWindow.g.cs
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\App.g.cs
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\Monopoly_MarkupCompile.cache
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\Monopoly_MarkupCompile.lref
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\MainWindow.baml
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\Monopoly.g.resources
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\Monopoly.Properties.Resources.resources
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.GenerateResource.cache
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\Monopoly.csproj.CoreCompileInputs.cache
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\Monopoly.exe
+C:\Users\harry\Documents\Programming\C#\Monopoly\Monopoly\obj\Debug\Monopoly.pdb

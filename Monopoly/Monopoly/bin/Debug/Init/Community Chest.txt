@@ -1,0 +1,14 @@
+Advance to Go (Collect £200),0,0
+Bank error in your favour. Collect £200,1,200
+Doctor’s fee. Pay £50,2,50
+From sale of stock you get £50,1,50
+Get Out of Jail Free,5
+Go to Jail. Go directly to jail do not pass Go do not collect £200,6
+Holiday fund matures. Receive £100,1,100
+Income tax refund. Collect £20,1,20
+Life insurance matures. Collect £100,1,100
+Pay hospital fees of £100,2,100
+Pay school fees of £50,2,50
+Receive £25 consultancy fee,1,25
+You have won second prize in a beauty contest. Collect £10,2,10
+You inherit £100,2,100
