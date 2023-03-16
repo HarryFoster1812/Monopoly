@@ -213,6 +213,7 @@ namespace Monopoly
             {
                 int renttopay = CalcRent(player, var.board);
                 ((TextBlock)((ScrollViewer)(var.rootCanvas).Children[var.PlayerCount + 11]).Content).Text += player.Name + " paid £" + renttopay.ToString() + " rent to " + this.owner.Name + "\n";
+                var.board.history += player.Name + " paid £" + renttopay.ToString() + " rent to " + this.owner.Name + "\n";
                 player.Bal = player.Bal - renttopay;
                 this.owner.Bal += renttopay;
             }
@@ -272,6 +273,7 @@ namespace Monopoly
                 player.Bal -= rentCo * dice;
                 this.owner.Bal += rentCo * dice;
                 ((TextBlock)((ScrollViewer)(var.rootCanvas).Children[var.PlayerCount + 11]).Content).Text += player.Name + " paid £" + (rentCo * dice).ToString() + " rent to " + this.owner.Name + "\n";
+                var.board.history += player.Name + " paid £" + (rentCo * dice).ToString() + " rent to " + this.owner.Name + "\n";
             }
         }
     }
@@ -305,7 +307,7 @@ namespace Monopoly
             else
             {
                 ((TextBlock)((ScrollViewer)(var.rootCanvas).Children[var.PlayerCount + 11]).Content).Text += player.Name + " paid £" + this.rents[this.houses].ToString() + " rent to " + this.owner.Name + "\n";
-
+                var.board.history += player.Name + " paid £" + this.rents[this.houses].ToString() + " rent to " + this.owner.Name + "\n";
                 player.Bal = player.Bal - this.rents[this.houses];
                 this.owner.Bal += this.rents[this.houses];
             }
@@ -321,6 +323,7 @@ namespace Monopoly
         public int Houses = 32;
         public int Hotels = 12;
         public bool Companyroll = false;
+        public string history;
         public Board(int players, string[] names, ImageSource[] images)
         {
             this.players = new Player[players];
@@ -999,13 +1002,13 @@ namespace Monopoly
                         }
                     }
                 }
-                GameScreen();
+                GameScreen(sender, e);
                 // sort the scores and switch the board players array so that the players are in the right order (if scores are tied the player who is earliest in the array goes first bc lazy and like cba)
             }
             counter++;
         }
 
-        public void GameScreen()
+        public void GameScreen(object sender, RoutedEventArgs e)
         {
             rootCanvas.Children.Clear();
             rootCanvas.Children.Add(board_image);
@@ -1106,8 +1109,7 @@ namespace Monopoly
             scroll.Height = 110;
 
             TextBlock history = new TextBlock();
-
-            history.Text += currentPlayer.Name + "'s turn\n";
+            history.Text += board.history + currentPlayer.Name + "'s turn\n";
             history.FontSize = 10;
             history.Background = Brushes.White;
             history.Foreground = Brushes.Black;
@@ -1143,7 +1145,7 @@ namespace Monopoly
             fine.Content = "Pay £50 fine";
             rootCanvas.Children.Add(fine);
             fine.Visibility = Visibility.Hidden;
-            fine.Click += (sender, e) => {
+            fine.Click += (sender1, e1) => {
                 Player player = board.GetCurrentPlayer();
                 player.Bal -= 50;
                 player.InJail = false;
@@ -1151,6 +1153,7 @@ namespace Monopoly
                 ((TextBlock)playerinfo[1]).Text = "Balance: " + player.Bal.ToString();
                 ((Button)sender).Visibility = Visibility.Hidden;
                 history.Text += player.Name + "paid £50 to get out of jail\n";
+                board.history += player.Name + "paid £50 to get out of jail\n";
 
             };
             Canvas.SetLeft(fine, 710);
@@ -1160,7 +1163,7 @@ namespace Monopoly
             Button getout = new Button();
             getout.Visibility = Visibility.Hidden;
             getout.Content = "Use get of jail card";
-            getout.Click += (sender, e) => {
+            getout.Click += (sender1, e1) => {
                 Player player = board.GetCurrentPlayer();
                 player.GetOutOfJail--;
                 player.InJail = false;
@@ -1189,11 +1192,13 @@ namespace Monopoly
             ((Image)((Canvas)((Button)sender).Parent).Children[PlayerCount + 8]).Source = dice[info[1]];
 
             ((TextBlock)((ScrollViewer)((Canvas)((Button)sender).Parent).Children[PlayerCount + 11]).Content).Text += current.Name + " rolled a " + info[0].ToString() + " and a " + info[1].ToString() + "\n";
+            board.history += current.Name + " rolled a " + info[0].ToString() + " and a " + info[1].ToString() + "\n";
 
             if (info[0] == info[1])
             {
                 ((Button)sender).IsEnabled = true;
                 ((TextBlock)((ScrollViewer)((Canvas)((Button)sender).Parent).Children[PlayerCount + 11]).Content).Text += current.Name + " rolled doubles!" + "\n";
+                board.history += current.Name + " rolled doubles!" + "\n";
                 doublesCount++;
                 if (current.InJail == true)
                 {
@@ -1208,6 +1213,7 @@ namespace Monopoly
                 else if (doublesCount == 3)
                 {
                     ((TextBlock)((ScrollViewer)((Canvas)((Button)sender).Parent).Children[PlayerCount + 11]).Content).Text += current.Name + " rolled 3 doubles in a row and goes to jail!" + "\n";
+                    board.history += current.Name + " rolled 3 doubles in a row and goes to jail!" + "\n";
                     current.InJail = true;
                     current.Position = 30;
                     End_Turn(sender, e);
@@ -1233,6 +1239,7 @@ namespace Monopoly
                     current.Position -= 40;
                     board.squares[0].Action(current);
                     ((TextBlock)((ScrollViewer)(rootCanvas).Children[PlayerCount + 11]).Content).Text += current.Name + " passed go and collects £200" + "\n";
+                    board.history += current.Name + " passed go and collects £200" + "\n";
 
                 }
 
@@ -1240,9 +1247,11 @@ namespace Monopoly
 
                 move_player(temp, current.Position);
                 ((TextBlock)((ScrollViewer)(rootCanvas).Children[PlayerCount + 11]).Content).Text += current.Name + " landed on " + board.squares[current.Position].name + "\n";
+                board.history += current.Name + " landed on " + board.squares[current.Position].name + "\n";
                 if (board.squares[current.Position] is MoneySquare && current.Position != 0)
                 {
                     ((TextBlock)((ScrollViewer)(rootCanvas).Children[PlayerCount + 11]).Content).Text += current.Name + " pays £" + ((MoneySquare)board.squares[current.Position]).amount.ToString() + "\n";
+                    board.history += current.Name + " pays £" + ((MoneySquare)board.squares[current.Position]).amount.ToString() + "\n";
 
                 }
                 else if (board.squares[current.Position] is Company)
@@ -1253,6 +1262,7 @@ namespace Monopoly
                         ((Button)sender).IsEnabled = true;
                         ((Button)((Canvas)((Button)sender).Parent).Children[PlayerCount + 12]).IsEnabled = false;
                         ((TextBlock)((ScrollViewer)(rootCanvas).Children[PlayerCount + 11]).Content).Text += current.Name + " has to roll to calculate rent." + "\n";
+                        board.history += current.Name + " has to roll to calculate rent." + "\n";
                         return;
                     }
                     else
@@ -1281,6 +1291,7 @@ namespace Monopoly
                     current.JailRounds = 0;
                     current.Bal -= 50;
                     ((TextBlock)((ScrollViewer)((Canvas)((Button)sender).Parent).Children[PlayerCount + 11]).Content).Text += current.Name + " paid £50 fine." + "\n";
+                    board.history += current.Name + " paid £50 fine." + "\n";
 
                 }
                 ((Button)((Canvas)((Button)sender).Parent).Children[PlayerCount + 14]).Visibility = Visibility.Hidden;
@@ -1295,6 +1306,7 @@ namespace Monopoly
             Player current = board.GetCurrentPlayer();
             ((Button)((Canvas)((Button)sender).Parent).Children[PlayerCount + 6]).IsEnabled = true;
             ((TextBlock)((ScrollViewer)((Canvas)((Button)sender).Parent).Children[PlayerCount + 11]).Content).Text += "\n" + current.Name + "'s turn\n";
+            board.history += "\n" + current.Name + "'s turn\n";
             ((TextBlock)((Canvas)((Button)sender).Parent).Children[PlayerCount + 1]).Text = current.Name;
             ((TextBlock)((Canvas)((Button)sender).Parent).Children[PlayerCount + 2]).Text = "Balance: " + current.Bal.ToString();
             ((TextBlock)((Canvas)((Button)sender).Parent).Children[PlayerCount + 3]).Text = "Position: " + current.Position.ToString();
@@ -1439,6 +1451,7 @@ namespace Monopoly
             Ok.Click += (sender, e) =>
             {
                 ((TextBlock)((ScrollViewer)(rootCanvas).Children[PlayerCount + 11]).Content).Text += board.GetCurrentPlayer().Name + " took a " + typecard + " card:" + "\n" + message;
+                board.history += board.GetCurrentPlayer().Name + " took a " + typecard + " card:" + "\n" + message;
                 rootCanvas.Children.RemoveRange(PlayerCount + 16, rootCanvas.Children.Count - (PlayerCount + 16));
             };
             rootCanvas.Children.Add(Ok);
@@ -1635,6 +1648,7 @@ namespace Monopoly
                 if (playersin.Count == 1) {
                     prop.Buy(board.players[playersin[0]], prop.price);
                     ((TextBlock)((ScrollViewer)(rootCanvas).Children[PlayerCount + 11]).Content).Text += board.players[playersin[0]].Name + " bought " + prop.name + "\n";
+                    board.history += board.players[playersin[0]].Name + " bought " + prop.name + "\n";
                     ((TextBlock)(rootCanvas).Children[PlayerCount + 2]).Text = "Balance: " + board.players[playersin[0]].Bal.ToString();
                     rootCanvas.Children.RemoveRange(PlayerCount + 16, rootCanvas.Children.Count - (PlayerCount + 16));
                     return;
@@ -1848,6 +1862,7 @@ namespace Monopoly
                 {
                     prop.Buy(player, prop.price);
                     ((TextBlock)((ScrollViewer)(rootCanvas).Children[PlayerCount + 11]).Content).Text += player.Name + " bought " + prop.name + "\n";
+                    board.history += player.Name + " bought " + prop.name + "\n"; ;
                     ((TextBlock)(rootCanvas).Children[PlayerCount + 2]).Text = "Balance: " + player.Bal.ToString();
                     rootCanvas.Children.RemoveRange(PlayerCount + 16, rootCanvas.Children.Count - (PlayerCount + 16));
 
@@ -1887,13 +1902,23 @@ namespace Monopoly
             int counter = 0;
             foreach (Brush i in colours.Values) {
                 
-                Button temp = new Button();
-                temp.Background = i;
+                Rectangle temp = new Rectangle();
+                temp.Stroke = i;
                 temp.Width = 78;
                 temp.Height = 23;
-                temp.Click += (sender1, e1) => {
+                temp.MouseEnter += (sender1, e1) => {
+                    Cursor= Cursors.Hand;
+                };
+                temp.MouseLeave += (sender1, e1) => {
+                    Cursor = Cursors.Arrow;
+                };
+                temp.MouseDown += (sender1, e1) => {
                     char key = SmartReverseLookup(colours, i);
                     Properties = board.GetProperties(key, board.GetCurrentPlayer());
+                    if (Properties.Count >= 1)
+                    {
+                        Prop = CreateCard(Properties[0]);
+                    }
                 };
                 rootCanvas.Children.Add(temp);
                 Canvas.SetTop(temp, 203 + (11+23)*(counter/3));
@@ -1923,6 +1948,7 @@ namespace Monopoly
             Exit.FontSize = 30;
             Exit.Background = null;
             Exit.BorderThickness = new Thickness(0);
+            Exit.Click += GameScreen;
             rootCanvas.Children.Add(Exit);
             Canvas.SetRight(Exit, 5);
             Canvas.SetTop(Exit, 5);
